@@ -1,0 +1,19 @@
+.common {
+    margin: 30px;
+    width: 100%;
+    height: 100%;
+    // background-color: red;
+    animation: anmCommon 1.2s linear forwards;
+    overflow: auto;
+    transition: all 1.2s linear;
+}
+@keyframes anmCommon {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

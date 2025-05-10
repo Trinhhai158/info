@@ -1,0 +1,205 @@
+.Header {
+    position: relative;
+    padding: 10px;
+    background-color: var(--header-bg);
+    border-radius: 0 0 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    box-shadow: 0 0 15px var(--header-bg);
+    &::before {
+        position: absolute;
+        content: "";
+        width: 90px;
+        height: 50px;
+        background-color: var(--header-bg);
+        bottom: -20%;
+        left: 0;
+        border-radius: 0 999px;
+        box-shadow: 0 0 15px var(--header-bg);
+        z-index: -1;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 50px;
+        background-color: var(--header-bg);
+        bottom: -20%;
+        left: 50%;
+        border-radius: 55% 45% 52% 48% / 2% 0% 100% 98%;
+        box-shadow: 0 0 15px var(--header-bg);
+        transform: translateX(-50%);
+        animation: anmHeaderAfter 8.2s linear infinite;
+        z-index: -1;
+    }
+    @keyframes anmHeaderAfter {
+        0%,
+        100% {
+        }
+        50% {
+            left: 80%;
+        }
+    }
+}
+
+// logo
+.div_logo {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .div_logo-img {
+        width: 90px;
+        height: 90px;
+        .logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+// search
+.div_search {
+    position: relative;
+    width: 50%;
+    height: 40px;
+    border-radius: 999px;
+    overflow: hidden;
+    .input_search {
+        width: 100%;
+        height: 100%;
+        border-radius: 999px;
+        outline: none;
+        border: 3px solid transparent;
+        text-align: center;
+        padding: 0 20px;
+    }
+    .icon_search {
+        background-color: antiquewhite;
+        position: absolute;
+        right: 0;
+        height: 100%;
+        font-size: 3rem;
+        &:hover {
+            cursor: pointer;
+        }
+        animation: anmIconSearch 0.6s linear infinite;
+    }
+    @keyframes anmIconSearch {
+        0%,
+        100% {
+        }
+        50% {
+            background-color: orange;
+            color: aliceblue;
+        }
+    }
+}
+
+// Nút bật sáng tối
+.toggle {
+    width: 5%;
+    border-radius: 20px;
+    background-color: var(--item-bg);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .toggle_btn {
+        position: relative;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: red;
+        &:hover {
+            cursor: pointer;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            top: -20%;
+            right: 0;
+            width: 10px;
+            height: 5px;
+            background-color: greenyellow;
+        }
+        animation: anmToggleBtn 0.7s linear infinite;
+    }
+    .icon_toggle {
+        font-size: 2.2rem;
+        color: yellow;
+        font-weight: 900;
+    }
+    @keyframes anmToggleBtn {
+        0% {
+            transform: rotateZ(0);
+        }
+        100% {
+            transform: rotateZ(360deg);
+        }
+    }
+}
+
+// Avatar
+.div_avatar {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .div_avatar-img {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border: 5px solid var(--item-bg);
+        border-radius: 50%;
+        box-shadow: 0 0 15px ghostwhite, 0 0 35px greenyellow;
+        &::before {
+            position: absolute;
+            content: "";
+            top: -10%;
+            right: -10%;
+            width: 20px;
+            height: 20px;
+            background-color: var(--item-bg);
+            clip-path: polygon(
+                50% 0%,
+                80% 10%,
+                100% 35%,
+                100% 70%,
+                80% 90%,
+                50% 100%,
+                20% 90%,
+                0% 70%,
+                0% 35%,
+                20% 10%
+            );
+            animation: anmImgBefore 0.7s linear infinite;
+        }
+        @keyframes anmImgBefore {
+            0% {
+                transform: rotateX(0);
+            }
+            100% {
+                transform: rotateX(360deg);
+            }
+        }
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .div_search {
+        display: none;
+    }
+    .toggle {
+        width: 55%;
+    }
+}

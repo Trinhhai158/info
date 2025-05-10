@@ -1,0 +1,83 @@
+.HumanBeings {
+    position: absolute;
+    top: 0;
+    right: -50%;
+    .head {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: var(--humanBeings-bg);
+    }
+    .body {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 150px;
+        width: 15px;
+        border-radius: 10px 10px 0 0;
+        background-color: var(--humanBeings-bg);
+        .hand_left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: top center;
+            transform: rotateZ(30deg);
+            height: 170px;
+            width: 15px;
+            border-radius: 10px;
+            background-color: var(--humanBeings-bg);
+            box-shadow: 0 15px 15px var(--item-bg);
+            transition: transform 0.3s ease;
+            // animation: anmHandLeft 4.2s linear infinite;
+        }
+        @keyframes anmHandLeft {
+            0%,
+            100% {
+            }
+            50% {
+                transform: rotateZ(90deg);
+            }
+        }
+        .hand_right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform-origin: top center;
+            transform: rotateZ(-30deg);
+            height: 170px;
+            width: 15px;
+            border-radius: 10px;
+            background-color: var(--humanBeings-bg);
+        }
+        .foot_left {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transform-origin: top center;
+            transform: rotateZ(20deg);
+            height: 200px;
+            width: 15px;
+            border-radius: 0 0 10px 10px;
+            background-color: var(--humanBeings-bg);
+        }
+        .foot_right {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            transform-origin: top center;
+            transform: rotateZ(-20deg);
+            height: 200px;
+            width: 15px;
+            border-radius: 0 0 10px 10px;
+            background-color: var(--humanBeings-bg);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .HumanBeings {
+        display: none;
+    }
+}

@@ -1,0 +1,60 @@
+.hobbies {
+    padding: 40px 20px;
+    border-radius: 16px;
+    margin: 30px auto;
+    text-align: center;
+    animation: fadeIn 0.6s ease;
+
+    .title {
+        font-size: 28px;
+        color: var(--item-bg);
+        margin-bottom: 30px;
+    }
+
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        list-style: none;
+    }
+
+    .item {
+        margin: 20px 10px;
+        width: calc(30% - 20px);
+        background: var(--item-bg);
+        border-radius: 12px;
+        padding: 20px 10px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .label {
+            font-size: 16px;
+            color: #555;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

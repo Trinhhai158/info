@@ -1,0 +1,95 @@
+.navbar {
+    position: relative;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // height: 600px;
+    border-radius: 15px;
+    padding: 30px 0;
+    background-color: var(--navbar-bg);
+    .title {
+        z-index: -1;
+        position: absolute;
+        top: 5%;
+        right: -10%;
+        width: 0%;
+        height: 70px;
+        border-radius: 30px;
+        background-color: var(--navbar-bg);
+        animation: anmTitleNav 1.2s linear forwards;
+    }
+    @keyframes anmTitleNav {
+        0% {
+            width: 0%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    ul {
+        // background-color: antiquewhite;
+        padding: 20px;
+        li {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: var(--navbar-bg);
+            color: var(--text-color);
+            text-align: center;
+            vertical-align: center;
+            font-size: 2rem;
+            font-weight: 900;
+            border-radius: 80% 20% 79% 21% / 2% 29% 71% 98%;
+            &:hover {
+                cursor: pointer;
+            }
+            transition: all 1.2s linear;
+        }
+        @for $i from 1 through 3 {
+            li:nth-child(#{$i}) {
+                box-shadow: 0 0 15px var(--item-bg);
+                transition-delay: $i * 1s;
+            }
+        }
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        width: 52px;
+        height: 92px;
+        top: -10%;
+        right: 0;
+        background-color: var(--navbar-bg);
+        border-radius: 54% 46% 100% 0% / 0% 21% 79% 100%;
+    }
+    .support {
+        // background-color: blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .support_auto {
+            padding: 20px;
+            font-size: 2.2rem;
+            font-weight: 900;
+            span {
+                margin-left: 15px;
+            }
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+            transition: all 0.9s linear;
+        }
+        .setting {
+        }
+        .logout {
+            border-top: 2px solid orange;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 100%;
+    }
+}

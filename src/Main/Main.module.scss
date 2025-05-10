@@ -1,0 +1,28 @@
+.main {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section {
+    border-radius: 20px;
+    margin-left: 250px;
+    width: calc(80% - 250px);
+    height: 570px;
+    background-color: var(--section-bg);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1.2s linear;
+}
+
+@media (max-width: 768px) {
+    .main {
+        // justify-content: center;
+    }
+    .section {
+        margin: 0;
+        width: calc(100%);
+    }
+}
